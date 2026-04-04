@@ -1,0 +1,23 @@
+<form th:action="@{/update}" th:object="${emp}" method="post">
+
+<input type="hidden" th:field="*{empId}" />
+
+Name: <input type="text" th:field="*{empName}" />
+<span th:errors="*{empName}"></span>
+<br>
+
+Salary: <input type="text" th:field="*{empSal}" />
+<span th:errors="*{empSal}"></span>
+<br>
+
+DOJ: <input type="date" th:field="*{empDoj}" />
+<span th:errors="*{empDoj}"></span>
+<br>
+
+Dept: <input type="text" th:field="*{deptName}" />
+<span th:errors="*{deptName}"></span>
+<br>
+
+<button type="submit">Save</button>
+
+</form>
