@@ -1,0 +1,24 @@
+package com.example.userservice.controller;
+
+import com.example.userservice.model.User;
+import com.example.userservice.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/users")
+public class UserController {
+
+    @Autowired
+    private UserService service;
+
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable Long id) {
+        return service.getUser(id);
+    }
+
+    @PostMapping
+    public User createUser(@RequestBody User user) {
+        return service.createUser(user);
+    }
+}
